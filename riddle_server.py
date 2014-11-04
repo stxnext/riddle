@@ -43,9 +43,9 @@ def check_payload(payload):
     warnings = []
     for i, line in enumerate(payload):
         if len(line) < LENGTHS[i]:
-            warnings.append('Line {} is to short.'.format(i+1))
+            warnings.append('Line {} is too short.'.format(i+1))
         elif len(line) > LENGTHS[i]:
-            warnings.append('Line {} is to long.'.format(i+1))
+            warnings.append('Line {} is too long.'.format(i+1))
         elif get_digest(line) != DIGESTS[i]:
             warnings.append('Line {} have to be changed.'.format(i+1))
 
