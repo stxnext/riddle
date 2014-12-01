@@ -58,7 +58,7 @@ def application(environ, start_response):
         status = '200 OK'
         if environ['REQUEST_METHOD'] != 'PUT':
             output = 'You should *PUT* valid source code here!'
-        elif environ['REQUEST_URI'] != 'here':
+        elif environ['REQUEST_URI'] not in ('here', '/here'):
             output = 'You should PUT valid source code *here*!'
         elif environ.get('wsgi.input') is None:
             output = 'You should PUT valid source *code* here!'
